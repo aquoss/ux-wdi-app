@@ -16,5 +16,14 @@ function RestaurantInfoController($location, ModalService){
     })
   }
 
+  vm.showDropOffModal = function(){
+    ModalService.showModal({
+      templateUrl: '/templates/drop-off',
+      controller: 'DropOffController'
+    }).then(function(modal){
+      modal.element.modal();
+    })
+  }
+
 
 }

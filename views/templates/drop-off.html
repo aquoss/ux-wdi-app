@@ -1,0 +1,38 @@
+<div class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" ng-click="close(false)" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h2 class="modal-title">Drop Off</h4>
+      </div>
+      <div class="modal-body">
+
+        <div class="btn-group">
+          <button type="button" class="btn btn-secondary">Choose Soup Kitchen</button>
+          <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a href="#">San Francisco-Marin Food Bank</a></li>
+            <li><a href="#">Project Homeless Connect</a></li>
+            <li><a href="#">Edgewood</a></li>
+            <li><a href="#">Alameda Food Bank</a></li>
+            <li><a href="#">Glide</a></li>
+          </ul>
+        </div>
+        <hr>
+        <p>* Some soup kitchens have special hours. Be sure to double check before making a drop off</p>
+
+        <form class="form-group">
+          <label>Date: </label>
+          <input type="text" class="form-control" placeholder="mm/dd">
+          <br><label>Time: </label>
+          <input type="text" class="form-control" placeholder="12:00 PM">
+      </div>
+      <div class="modal-footer">
+        <button type="button" ng-click="close(true)" class="btn btn-primary" data-dismiss="modal">Submit</button>
+        <button type="button" ng-click="close(false)" class="btn btn-default" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>

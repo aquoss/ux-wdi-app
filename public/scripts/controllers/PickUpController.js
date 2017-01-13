@@ -4,5 +4,5 @@ angular.module('feedable')
 PickUpController.$inject=[];
 function PickUpController(){
   var vm=this;
-  
+
 }
