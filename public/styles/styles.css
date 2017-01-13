@@ -1,9 +1,56 @@
-.choose-type {
-  height: 400px;
-  width: 400px;
+body {
+  font-family: 'Poppins', sans-serif;
 }
 
-button {
-  width: 80%;
+.logo {
+  font-size: 60px;
+  margin-top: 20px;
+}
+
+.feed {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 800;
+}
+
+.able {
+  font-family: 'Open Sans', sans-serif;
+}
+
+#soup-kitchen {
+  background: linear-gradient(rgba(50, 50, 50, 0.55), rgba(50, 50, 50, 0.55)),
+              url(http://static.wixstatic.com/media/a16309_1499efecfca24ef0ba89358c2b49c8aa~mv2_d_5130_3420_s_4_2.jpg);
+  background-size: cover;
+}
+
+#restaurant {
+  background: linear-gradient(rgba(50, 50, 50, 0.55), rgba(50, 50, 50, 0.55)),
+              url(http://s3.amazonaws.com/digitaltrends-uploads-prod/2012/08/restaurant.jpeg);
+  background-size: cover;
+}
+
+.type-container {
+  height: 30em;
+  margin-top: 100px;
+
+}
+
+.type-text {
+  margin-left: 10%;
+  font-size: 3em;
   color: white;
+  padding-top: 40px;
+}
+
+.bold {
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.glyphicon-arrow-right {
+  width: 55%;
+  margin-left: 10%;
+  text-align: center;
+  color: white;
+  font-size: 1.4em;
+
 }
