@@ -4,7 +4,9 @@ angular.module('feedable')
 RestaurantInfoController.$inject = ['$location'];
 function RestaurantInfoController($location){
   var vm = this;
-
+  vm.goBack = function(){
+    $location.path('/');
+  }
 
 
 }

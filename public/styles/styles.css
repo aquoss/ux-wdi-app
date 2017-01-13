@@ -1,10 +1,18 @@
 body {
   font-family: 'Poppins', sans-serif;
+  background: url('http://clipgoo.com/daut/as/f/f/foundry-iii-living-wall-505-howard-st-green-habitat-next-previous_indoor-green-wall-plants_home-decor_home-decor-blog-decorators-catalog-pinterest-decorating-rugs-affordable-beach-coupon-code-country.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .logo {
   font-size: 60px;
   margin-top: 20px;
+  padding-left: 35px;
+  color: black;
+  background: rgba(255,255,255,.7);
 }
 
 .feed {
@@ -16,13 +24,17 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
-#soup-kitchen {
+#soup-kitchen, #restaurant {
+  background: rgba(50, 50, 50, 0.7);
+}
+
+#soup-kitchen:hover {
   background: linear-gradient(rgba(50, 50, 50, 0.55), rgba(50, 50, 50, 0.55)),
               url(http://static.wixstatic.com/media/a16309_1499efecfca24ef0ba89358c2b49c8aa~mv2_d_5130_3420_s_4_2.jpg);
   background-size: cover;
 }
 
-#restaurant {
+#restaurant:hover {
   background: linear-gradient(rgba(50, 50, 50, 0.55), rgba(50, 50, 50, 0.55)),
               url(http://s3.amazonaws.com/digitaltrends-uploads-prod/2012/08/restaurant.jpeg);
   background-size: cover;
@@ -38,7 +50,7 @@ body {
   margin-left: 10%;
   font-size: 3em;
   color: white;
-  padding-top: 40px;
+  padding-top: 20%;
 }
 
 .bold {
@@ -46,24 +58,23 @@ body {
   font-weight: bold;
 }
 
-.glyphicon-arrow-right {
-  width: 55%;
-  margin-left: 10%;
-  text-align: center;
-  color: white;
-  font-size: 1.4em;
-  position: absolute;
-  top: 400px;
-}
-
 /*/////////////RESTAURANT PATH//////////////*/
 
 .restaurant-links {
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 .info-link {
   height: 5em;
   margin-top: 3em;
   text-align: center;
+}
+
+button.back {
+  float: left;
+  margin-bottom: 20px;
+}
+
+.type-title {
+  margin-top: 50px;
 }
