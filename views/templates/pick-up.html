@@ -1,24 +1,20 @@
-<!-- <div class="modal-body">
-  <h5>Popover in a modal</h5>
-  <p>This <a href="#" role="button" class="btn btn-secondary popover-test" title="Popover title" data-content="Popover body content is set in this attribute.">button</a> triggers a popover on click.</p>
-  <hr>
-  <h5>Tooltips in a modal</h5>
-  <p><a href="#" class="tooltip-test" title="Tooltip">This link</a> and <a href="#" class="tooltip-test" title="Tooltip">that link</a> have tooltips on hover.</p>
-</div> -->
-
 <div class="modal fade">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" ng-click="close(false)" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title">Yes or No?</h4>
+        <h2 class="modal-title">Pick-Up</h4>
       </div>
       <div class="modal-body">
-        <p>It's your call...</p>
+        <form class="form-group">
+          <label>Date: </label>
+          <input type="text" class="form-control" placeholder="mm/dd">
+          <br><label>Time: </label>
+          <input type="text" class="form-control" placeholder="12:00 PM">
       </div>
       <div class="modal-footer">
-        <button type="button" ng-click="close(false)" class="btn btn-default" data-dismiss="modal">No</button>
-        <button type="button" ng-click="close(true)" class="btn btn-primary" data-dismiss="modal">Yes</button>
+        <button type="button" ng-click="close(true)" class="btn btn-primary" data-dismiss="modal">Request Pick-Up</button>
+        <button type="button" ng-click="close(false)" class="btn btn-default" data-dismiss="modal">Cancel</button>
       </div>
     </div>
   </div>
