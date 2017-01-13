@@ -9,11 +9,11 @@ function config($routeProvider, $locationProvider){
       controller: 'HomepageController',
       controllerAs: 'homepageCtrl'
     })
-    // .when('/restaurant', {
-    //   templateUrl: '/templates/restaurant-info',
-    //   controller: 'RestaurantInfoController',
-    //   controllerAs: 'restaurantInfoCtrl'
-    // })
+    .when('/restaurant', {
+      templateUrl: '/templates/restaurant-info',
+      controller: 'RestaurantInfoController',
+      controllerAs: 'restaurantInfoCtrl'
+    })
     // // .when('/restaurant/pickup', {
     // //
     // // })
