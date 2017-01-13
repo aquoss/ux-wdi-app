@@ -1,46 +1,71 @@
-
+<div class="logo2 col-xs-12">
+  <span class="feed">feed</span><span class="able">ABLE</span>
+</div>
 
 <div class="row white-background">
 
-  <div class="logo2 col-xs-12">
-    <span class="feed">feed</span><span class="able">ABLE</span>
-  </div>
-
-  <h3 class="type-title col-xs-12">Restaurant/Catering Service</h3><br>
-  <div class="col-xs-12">
-    <button type="button" class="btn btn-default back" ng-click="restaurantInfoCtrl.goBack()">
+  <h2 class="type-title col-xs-12">
+    <button type="button" class="btn btn-secondary btn-sm back" ng-click="restaurantInfoCtrl.goBack()">
       <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Back
     </button>
-  </div>
+    Restaurant/Catering Service</h2><br>
+
 
   <div class="col-xs-6">
-    <form>
+    <form class="form-group business-form">
       <label>Business Name: </label>
       <input type="text" class="form-control" ng-model="newRestaurant.name"><br>
       <label>Address: </label>
       <input type="text" class="form-control" placeholder="Street Address, City State Zipcode" ng-model="newRestaurant.address"><br>
       <label>Phone Number: </label>
-      <input type="text" class="form-control" placeholder="(xxx)xxx-xxxx" ng-model="newRestaurant.phone"><br>
+      <input type="text" class="form-control" placeholder="(   )   -    " ng-model="newRestaurant.phone"><br>
       <label>Contact Name: </label>
       <input type="text" class="form-control" placeholder="Who should we ask to speak to if there's a problem?" ng-model="newRestaurant.contact"><br>
     </form>
   </div>
 
-  <div class="col-xs-6">
-    <div class="restaurant-links">
+  <div class="col-xs-4 col-xs-offset-1 grey-background">
+    <form class="restaurant-links">
       <!-- create a custom directive for these later -->
-      <div class="info-link col-xs-4">FB
+      <div class="form-group info-link row">
+        <div class="col-xs-3">
+          <img class="link-image" src="http://webaddresshere.com/wp-content/uploads/2015/12/1409323491_web_design_website_monitor_imac_flat_icon_symbol-256.png">
+        </div>
+        <div class="col-xs-8">
+          <input type="text" class="form-control" placeholder="website url" ng-model="newRestaurant.website"></span>
+        </div>
       </div>
-      <div class="info-link col-xs-4">IG
+      <div class="form-group info-link row">
+        <div class="col-xs-3">
+          <img class="link-image" src="http://www.newdesignfile.com/postpic/2011/02/restaurant-menu-icons_237333.png">
+        </div>
+        <div class="col-xs-8">
+          <input type="text" class="form-control" placeholder="link to menu" ng-model="newRestaurant.menu"></span>
+        </div>
       </div>
-      <div class="info-link col-xs-4">yelp
+      <div class="form-group info-link row">
+        <div class="col-xs-3">
+          <img class="link-image" src="http://icons.iconarchive.com/icons/martz90/circle-addon1/512/yelp-icon.png">
+        </div>
+        <div class="col-xs-8">
+          <input type="text" class="form-control" placeholder="facebook.com/account" ng-model="newRestaurant.facebook"></span>
+        </div>
       </div>
-      <div class="info-link col-xs-4">menu
+      <div class="form-group info-link row">
+        <div class="col-xs-3">
+          <img class="link-image" src="https://supervacuo.com/media/uploads/images/facebook.png">
+        </div>
+        <div class="col-xs-8">
+          <input type="text" class="form-control" placeholder="yelp.com/account" ng-model="newRestaurant.yelp"></span>
+        </div>
       </div>
-      <div class="info-link col-xs-4">etc
-      </div>
-      <div class="info-link col-xs-4">etc
-      </div>
-    </div>
+    </form>
   </div>
+
+  <div class="col-xs-12 delivery">
+    <h3>Delivery Method:</h3>
+    <button type="button" class="btn btn-secondary delivery-btn">Pick Up</button>
+    <button type="button" class="btn btn-secondary delivery-btn">Drop Off</button>
+  </div>
+
 </div>

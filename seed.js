@@ -5,3 +5,7 @@
 // city (to filter by)
 // phone: phone number
 // contact: name of person in charge at restaurant to speak with
+// yelp:
+// website:
+// menu:
+// facebook: facebook
