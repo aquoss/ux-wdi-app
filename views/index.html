@@ -5,11 +5,11 @@
     <!-- Angular CDN -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.js"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-animate.js"></script>
     <!-- js files -->
     <script type="text/javascript" src="scripts/app.js"></script>
     <script type="text/javascript" src="scripts/controllers/HomepageController.js"></script>
-        <script type="text/javascript" src="scripts/controllers/RestaurantInfoController.js"></script>
+    <script type="text/javascript" src="scripts/controllers/RestaurantInfoController.js"></script>
 
     <!-- jQuery CDN for bootstrap -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -29,21 +29,9 @@
     <title>feedABLE</title>
   </head>
   <body>
-    <div class="logo col-xs-3">
-      <span class="feed">feed</span><span class="able">ABLE</span>
+
+    <div ng-view class="slideup">
     </div>
-    <div class="container">
-      <div class="row">
-        <!-- <div class="logo col-xs-12">
-          <span class="feed">feed</span><span class="able">ABLE</span>
-        </div> -->
-      </div>
 
-<!-- ng-view -->
-      <div class="row" ng-view>
-      </div>
-
-
-    </div>
   </body>
 </html>

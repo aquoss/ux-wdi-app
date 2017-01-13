@@ -1,3 +1,32 @@
+/*/////////FIRST PAGE ANIMATION////////////*/
+
+.slideup {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+}
+.slideup.ng-enter,
+.slideup.ng-leave {
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+}
+.slideup.ng-enter {
+    top: 100%;
+}
+.slideup.ng-enter-active {
+    top: 0;
+}
+.slideup.ng-leave {
+    top: 0;
+}
+.slideup.ng-leave-active {
+    top: -100%;
+}
+
+/*/////////////HOMEPAGE////////////////*/
+
 body {
   font-family: 'Poppins', sans-serif;
   background: url('http://clipgoo.com/daut/as/f/f/foundry-iii-living-wall-505-howard-st-green-habitat-next-previous_indoor-green-wall-plants_home-decor_home-decor-blog-decorators-catalog-pinterest-decorating-rugs-affordable-beach-coupon-code-country.jpg') no-repeat center center fixed;
@@ -7,8 +36,8 @@ body {
   background-size: cover;
 }
 
-.logo {
-  font-size: 60px;
+.logo1 {
+  font-size: 4.5vw;
   margin-top: 20px;
   padding-left: 35px;
   color: black;
@@ -41,32 +70,44 @@ body {
 }
 
 .type-container {
-  height: 30em;
+  height: 30vw;
   margin-top: 100px;
 
 }
 
 .type-text {
   margin-left: 10%;
-  font-size: 3em;
+  font-size: 3vw;
   color: white;
   padding-top: 20%;
 }
 
 .bold {
-  font-size: 1.3em;
+  font-size: 4vw;
   font-weight: bold;
 }
 
 /*/////////////RESTAURANT PATH//////////////*/
+
+.logo2 {
+  font-size: 4.5vw;
+  color: black;
+}
+
+.white-background {
+  background: white;
+  margin-top: 50px;
+  padding: 10px 50px 50px 50px;
+  height: 85%;
+}
 
 .restaurant-links {
   margin-top: 50px;
 }
 
 .info-link {
-  height: 5em;
-  margin-top: 3em;
+  height: 5vw;
+  margin-top: 3vw;
   text-align: center;
 }
 
