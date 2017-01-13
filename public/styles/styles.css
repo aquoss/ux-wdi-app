@@ -54,5 +54,16 @@ body {
   font-size: 1.4em;
   position: absolute;
   top: 400px;
+}
 
+/*/////////////RESTAURANT PATH//////////////*/
+
+.restaurant-links {
+  margin-top: 100px;
+}
+
+.info-link {
+  height: 5em;
+  margin-top: 3em;
+  text-align: center;
 }
