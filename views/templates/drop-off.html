@@ -20,6 +20,7 @@
             <li><a href="#">Glide</a></li>
           </ul>
         </div>
+
         <hr>
         <p>* Some soup kitchens have special hours. Be sure to double check before making a drop off</p>
 
@@ -29,8 +30,8 @@
           <br><label>Time: </label>
           <input type="text" class="form-control" placeholder="12:00 PM">
       </div>
-      <div class="modal-footer">
-        <button type="button" ng-click="close(true)" class="btn btn-primary" data-dismiss="modal">Submit</button>
+      <div class="modal-footer" ng-controller="DropOffController as dropOffCtrl">
+        <button type="button" ng-click="dropOffCtrl.confirmation()" class="btn btn-primary" data-dismiss="modal">Schedule</button>
         <button type="button" ng-click="close(false)" class="btn btn-default" data-dismiss="modal">Cancel</button>
       </div>
     </div>

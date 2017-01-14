@@ -17,7 +17,6 @@ app.get('/templates/:name', function templates(req, res) {
   res.sendFile(__dirname + '/views/templates/' + name + '.html');
 });
 
-
 // CREATE ANY NECESSARY ROUTES
 
 

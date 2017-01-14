@@ -14,6 +14,11 @@ function config($routeProvider, $locationProvider){
       controller: 'RestaurantInfoController',
       controllerAs: 'restaurantInfoCtrl'
     })
+    .when('/restaurant/drop-off-confirmation', {
+      templateUrl: '/templates/confirmation',
+      controller: 'ConfirmationController',
+      controllerAs: 'confirmationCtrl'
+    })
     // // .when('/restaurant/pickup', {
     // //
     // // })
