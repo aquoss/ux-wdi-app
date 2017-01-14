@@ -11,7 +11,7 @@ restaurantList.push({
               website: 'http://www.cuisineofnepal.com/',
               menu: 'http://www.cuisineofnepal.com/',
               image: 'https://s3-media1.fl.yelpcdn.com/bphoto/qEadeS00swS7MysgemJX5Q/o.jpg',
-              facebook:
+              facebook: 'Not provided'
             });
 restaurantList.push({
               name: 'B Patisserie',
@@ -35,7 +35,7 @@ restaurantList.push({
               website: 'http://brickyardsf.com/',
               menu: 'http://brickyardsf.com/menu/',
               image: 'https://s3-media4.fl.yelpcdn.com/bphoto/arcvPUvp2Tkk8lmjwlHJVw/o.jpg',
-              facebook:
+              facebook: 'Not Provided'
             });
 
 

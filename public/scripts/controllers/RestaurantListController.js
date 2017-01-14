@@ -1,5 +1,5 @@
 angular.module('feedable')
-       .controllelr('RestaurantListController', RestaurantListController);
+       .controller('RestaurantListController', RestaurantListController);
 
 RestaurantListController.$inject=['$http'];
 function RestaurantListController($http){
@@ -7,9 +7,10 @@ function RestaurantListController($http){
 
   $http({
     method: 'GET',
-    url: '/api/restaurants'
+    url: '/restaurants'
   }).then(function successCallback(response) {
-    vm.restuarants = response.data;
+    vm.restaurants = response.data;
+    console.log(vm.restaurants);
   }, function errorCallback(response) {
     console.log('There was an error getting the data', response);
   });
