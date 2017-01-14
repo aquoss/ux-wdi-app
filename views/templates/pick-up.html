@@ -12,8 +12,8 @@
           <br><label>Time: </label>
           <input type="text" class="form-control" placeholder="12:00 PM">
       </div>
-      <div class="modal-footer">
-        <button type="button" ng-click="close(true)" class="btn btn-primary" data-dismiss="modal">Request Pick-Up</button>
+      <div class="modal-footer" ng-controller="DeliveryController as deliveryCtrl">
+        <button type="button" ng-click="deliveryCtrl.confirmation('pick-up')" class="btn btn-primary" data-dismiss="modal">Request Pick-Up</button>
         <button type="button" ng-click="close(false)" class="btn btn-default" data-dismiss="modal">Cancel</button>
       </div>
     </div>

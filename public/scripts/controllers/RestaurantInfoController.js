@@ -10,7 +10,7 @@ function RestaurantInfoController($location, ModalService){
   vm.showPickUpModal = function(){
     ModalService.showModal({
       templateUrl: '/templates/pick-up',
-      controller: 'PickUpController'
+      controller: 'DeliveryController'
     }).then(function(modal){
       modal.element.modal();
     })
@@ -19,7 +19,7 @@ function RestaurantInfoController($location, ModalService){
   vm.showDropOffModal = function(){
     ModalService.showModal({
       templateUrl: '/templates/drop-off',
-      controller: 'DropOffController'
+      controller: 'DeliveryController'
     }).then(function(modal){
       modal.element.modal();
     })
