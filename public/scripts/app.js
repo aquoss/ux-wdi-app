@@ -14,6 +14,11 @@ function config($routeProvider, $locationProvider){
       controller: 'RestaurantInfoController',
       controllerAs: 'restaurantInfoCtrl'
     })
+    .when('/soup-kitchen', {
+      templateUrl: '/templates/restaurant-list',
+      controller: 'RestaurantListController',
+      controllerAs: 'restaurantListCtrl'
+    })
     // .when('/restaurant/drop-off-confirmation', {
     //   templateUrl: '/templates/confirmation',
     //   controller: 'ConfirmationController',

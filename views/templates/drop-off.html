@@ -2,10 +2,10 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <button ng-hide="deliveryCtrl.saved" type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <button ng-hide="saved" type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         <h2 class="modal-title">Drop Off</h4>
       </div>
-      <div ng-hide="deliveryCtrl.saved" class="modal-body">
+      <div ng-hide="saved" class="modal-body">
 
         <div class="btn-group">
           <button type="button" class="btn btn-secondary">Choose Soup Kitchen</button>
@@ -21,6 +21,8 @@
           </ul>
         </div>
 
+        <!-- //////FILTER POSSIBLE FOOD BANKS BY LOCATION////////////NOT JUST SF -->
+
         <hr>
         <p>* Some soup kitchens have special hours. Be sure to double check before making a drop off</p>
 
@@ -31,7 +33,7 @@
           <input type="text" class="form-control" placeholder="12:00 PM">
       </div>
 
-      <div ng-show="deliveryCtrl.saved" class="modal-body">
+      <div ng-show="saved" class="modal-body">
         <h3>Confirmed!</h3><br>
         <p>Soup Kitchen: {{soupKitchen}}</p>
         <p>Date: {{date}}</p>
@@ -41,10 +43,12 @@
       </div>
 
       <div class="modal-footer">
-        <button ng-hide="deliveryCtrl.saved" type="button" ng-click="deliveryCtrl.confirmation('drop-off')" class="btn btn-primary">Schedule</button>
-        <button ng-hide="deliveryCtrl.saved" type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-        <button ng-show="deliveryCtrl.saved" type="button" class="btn btn-primary" ng-click="deliveryCtrl.toHomepage()">Exit</button>
+        <button ng-hide="saved" type="submit" ng-click="saved=true" class="btn btn-primary">Schedule</button>
+        <button ng-hide="saved" type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <button ng-show="saved" type="button" class="btn btn-primary" ng-click="deliveryCtrl.toHomepage()" data-dismiss="modal">Exit</button>
       </div>
     </div>
   </div>
 </div>
+
+<!-- MIGHT HAVE TO MOVE SUBMIT INTO MODAL FORM <FORM> -->
