@@ -1,10 +1,10 @@
 angular.module('feedable')
        .controller('DeliveryController', DeliveryController);
 
-DeliveryController.$inject=['$location'];
-function DeliveryController($location){
+DeliveryController.$inject=['$location','$window'];
+function DeliveryController($location, $window){
   var vm=this;
-  vm.save = null;
+  vm.saved = null;
   vm.kitchens = [
     {name: 'San Francisco-Marin Food Bank'},
     {name: 'Project Homeless Connect'},
@@ -12,8 +12,13 @@ function DeliveryController($location){
     {name: 'Alameda Food Bank'},
     {name: 'Glide'}
   ];
-  vm.confirmation = function(type){
-    $location.path('/restaurant/'+type+'-confirmation');
+  vm.confirmation = function(){
+    vm.saved = true;
+  }
+
+  vm.toHomepage = function(){
+    $location.path('/');
+    $window.location.reload();
   }
 
 }

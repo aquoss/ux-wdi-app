@@ -14,25 +14,19 @@ function config($routeProvider, $locationProvider){
       controller: 'RestaurantInfoController',
       controllerAs: 'restaurantInfoCtrl'
     })
-    .when('/restaurant/drop-off-confirmation', {
-      templateUrl: '/templates/confirmation',
-      controller: 'ConfirmationController',
-      controllerAs: 'confirmationCtrl'
-    })
-    .when('/restaurant/pick-up-confirmation', {
-      templateUrl: '/templates/confirmation',
-      controller: 'ConfirmationController',
-      controllerAs: 'confirmationCtrl'
-    })
-    // // .when('/restaurant/pickup', {
-    // //
-    // // })
-    // // .when('/restaurant/drop-off', {
-    // //
-    // // })
-    // .otherwise({
-    //   redirectTo: '/'
-    // });
+    // .when('/restaurant/drop-off-confirmation', {
+    //   templateUrl: '/templates/confirmation',
+    //   controller: 'ConfirmationController',
+    //   controllerAs: 'confirmationCtrl'
+    // })
+    // .when('/restaurant/pick-up-confirmation', {
+    //   templateUrl: '/templates/confirmation',
+    //   controller: 'ConfirmationController',
+    //   controllerAs: 'confirmationCtrl'
+    // })
+    .otherwise({
+      redirectTo: '/'
+    });
 
     $locationProvider.html5Mode({
       enabled: true,

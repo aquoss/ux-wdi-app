@@ -2,7 +2,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" ng-click="close(false)" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         <h2 class="modal-title">Pick-Up</h4>
       </div>
       <div class="modal-body">
@@ -12,9 +12,9 @@
           <br><label>Time: </label>
           <input type="text" class="form-control" placeholder="12:00 PM">
       </div>
-      <div class="modal-footer" ng-controller="DeliveryController as deliveryCtrl">
-        <button type="button" ng-click="deliveryCtrl.confirmation('pick-up')" class="btn btn-primary" data-dismiss="modal">Request Pick-Up</button>
-        <button type="button" ng-click="close(false)" class="btn btn-default" data-dismiss="modal">Cancel</button>
+      <div class="modal-footer">
+        <button type="button" ng-click="deliveryCtrl.confirmation()" class="btn btn-primary" data-dismiss="modal">Request Pick-Up</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
       </div>
     </div>
   </div>

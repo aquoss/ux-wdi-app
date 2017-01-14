@@ -2,10 +2,10 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" ng-click="close(false)" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <button ng-hide="deliveryCtrl.saved" type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         <h2 class="modal-title">Drop Off</h4>
       </div>
-      <div class="modal-body">
+      <div ng-hide="deliveryCtrl.saved" class="modal-body">
 
         <div class="btn-group">
           <button type="button" class="btn btn-secondary">Choose Soup Kitchen</button>
@@ -30,9 +30,20 @@
           <br><label>Time: </label>
           <input type="text" class="form-control" placeholder="12:00 PM">
       </div>
-      <div class="modal-footer" ng-controller="DeliveryController as deliveryCtrl">
-        <button type="button" ng-click="deliveryCtrl.save = true" class="btn btn-primary" data-dismiss="modal">Save</button>
-        <button type="button" ng-click="close(false)" class="btn btn-default" data-dismiss="modal">Cancel</button>
+
+      <div ng-show="deliveryCtrl.saved" class="modal-body">
+        <h3>Confirmed!</h3><br>
+        <p>Soup Kitchen: {{soupKitchen}}</p>
+        <p>Date: {{date}}</p>
+        <p>Time: {{time}}</p>
+        <hr>
+        <p>Thank you so much for your contribution! Your selected soup kitchen looks forward to your donation.</p>
+      </div>
+
+      <div class="modal-footer">
+        <button ng-hide="deliveryCtrl.saved" type="button" ng-click="deliveryCtrl.confirmation('drop-off')" class="btn btn-primary">Schedule</button>
+        <button ng-hide="deliveryCtrl.saved" type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <button ng-show="deliveryCtrl.saved" type="button" class="btn btn-primary" ng-click="deliveryCtrl.toHomepage()">Exit</button>
       </div>
     </div>
   </div>
