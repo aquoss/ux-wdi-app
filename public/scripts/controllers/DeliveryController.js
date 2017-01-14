@@ -4,6 +4,7 @@ angular.module('feedable')
 DeliveryController.$inject=['$location'];
 function DeliveryController($location){
   var vm=this;
+  vm.save = null;
   vm.kitchens = [
     {name: 'San Francisco-Marin Food Bank'},
     {name: 'Project Homeless Connect'},
