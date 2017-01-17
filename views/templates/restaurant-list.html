@@ -2,20 +2,29 @@
   <span class="feed">feed</span><span class="able">ABLE</span>
 </div>
 
-<div class="row white-background">
+<div class="row white-background main-container">
 
   <h2 class="type-title col-xs-12">
-    <button type="button" class="btn btn-secondary btn-sm back" ng-click="restaurantInfoCtrl.goBack()">
+    <button type="button" class="btn btn-secondary btn-sm back" ng-click="restaurantListCtrl.goBack()">
       <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Back
     </button>
     Browse Donating Restaurants
   </h2><br>
 
   <div class="grey-background col-xs-10 col-xs-offset-1">
-    <input type="text" class="form-control" ng-model="searchText" placeholder="Search Restaurants">
-    <div ng-repeat="albums in albumsIndexCtrl.albums | orderBy: 'name' | filter: searchText" class="row">
+    <input type="text" class="form-control search" ng-model="searchText" placeholder="Search Restaurants">
+    <div class="scroll">
+      <div ng-repeat="rest in restaurantListCtrl.restaurants | orderBy: 'name' | filter: searchText">
+        <div class="col-md-3 col-sm-4 col-xs-6">
+          <img class="rest-image" src="{{rest.image}}"></img>
+          <div class="white-background text">
+            <p class="rest-name"><b>{{rest.name}}</b></p>
+            <p class="rest-address">{{rest.address}}</p>
+          </div>
+        </div>
+      </div>
   </div>
 
 </div>
 
-<!-- fix ng-repeat to refer to correct palces -->
+<!-- change col-xs to adjust screen sizes -->
