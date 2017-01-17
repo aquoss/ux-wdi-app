@@ -3,7 +3,7 @@ Schema = mongoose.Schema;
 
 var RestaurantSchema = new Schema({
   name: String,
-  mealType: [String],
+  // mealType: [String],
   address: String,
   phone: String,
   contact: String,
@@ -11,7 +11,11 @@ var RestaurantSchema = new Schema({
   website: String,
   menu: String,
   image: String,
-  facebook: String
+  facebook: String,
+  requests: {
+    type: Schema.Types.ObjectId,
+    ref: 'Request'
+  }
 });
 
 var Restaurant = mongoose.model('Restaurant', RestaurantSchema);
