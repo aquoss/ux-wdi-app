@@ -1,21 +1,38 @@
-
 <div class="modal-header">
-  <button type="button" class="close" ng-click="restaurantInfoCtrl.close()" aria-hidden="true">&times;</button>
+  <button type="button" class="close" ng-hide="submit" ng-click="restaurantInfoCtrl.close()" aria-hidden="true">&times;</button>
   <h2 class="modal-title">Pick-Up</h4>
 </div>
-<div class="modal-body">
-  <p>Please fill in the details below for your preferred pick-up time. While we cannot guarantee that a soup kitchen will be able to fulfill
-     your exact request, we promise that we will do our best to match your specifications. </p>
-  <form class="form-group">
-    <label>Date: </label>
-    <input type="text" class="form-control" placeholder="mm/dd" ng-model="newPickUp.date">
-    <br><label>Time: </label>
-    <input type="text" class="form-control" placeholder="12:00 PM" ng-model="newPickUp.time">
+<form class="form-group" ng-hide="submit">
+  <div class="modal-body">
+    <p>Please fill in the details below for your preferred pick-up time. While we cannot guarantee that a soup kitchen will be able to fulfill
+       your exact request, we promise that we will do our best to match your specifications. </p>
+    <div class="form-group">
+       <label class="col-2 col-form-label">Date: </label>
+       <div class="col-10">
+         <input class="form-control" type="date" ng-model="newPickUp.date">
+       </div>
+     </div>
+     <div class="form-group">
+       <label class="col-2 col-form-label">Time: </label>
+       <div class="col-10">
+         <input class="form-control" type="time" ng-model="newPickUp.time">
+       </div>
+     </div>
+    </div>
+  <div class="modal-footer">
+    <button type="submit" ng-click="restaurantInfoCtrl.savePickUp(newPickUp); submit=true" class="btn btn-primary">Request Pick Up</button>
+    <button type="button" class="btn btn-default" ng-click="restaurantInfoCtrl.close()">Cancel</button>
+  </div>
+</form>
+
+<div class="modal-body" ng-show="submit">
+  <h3>Scheduled!</h3><br>
+  <p>Requested Date: {{restaurantInfoCtrl.newPickUp.date | date: "EEEE, MMMM d"}}</p>
+  <p>Requested Time: {{restaurantInfoCtrl.newPickUp.time | date: "h:mm a"}}</p>
+  <hr>
+  <p>A request has been sent to the soup kitchens in your area. The one that can most closely accomodate your timing will reach out to your provided contact.</p>
 </div>
 
-<div class="modal-footer">
-  <button type="submit" ng-click="restaurantInfoCtrl.savePickUp(newPickUp)" class="btn btn-primary">Save</button>
-  <button type="button" class="btn btn-default" ng-click="restaurantInfoCtrl.close()">Cancel</button>
+<div ng-show="submit" class="modal-footer">
+  <button type="button" class="btn btn-default" ng-click="restaurantInfoCtrl.exit()">Exit</button>
 </div>
-
-<!-- MIGHT HAVE TO MOVE SUBMIT INTO MODAL FORM <FORM> -->

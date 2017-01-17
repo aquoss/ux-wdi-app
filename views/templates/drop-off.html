@@ -1,50 +1,55 @@
-
 <div class="modal-header">
-  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+  <button type="button" ng-hide="submit" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
   <h2 class="modal-title">Drop Off</h4>
 </div>
-<div class="modal-body">
 
-  <div class="btn-group">
-    <button type="button" class="btn btn-secondary">Choose Soup Kitchen</button>
-    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      <span class="caret"></span>
-    </button>
-    <ul class="dropdown-menu">
-      <li><a href="#">San Francisco-Marin Food Bank</a></li>
-      <li><a href="#">Project Homeless Connect</a></li>
-      <li><a href="#">Edgewood</a></li>
-      <li><a href="#">Alameda Food Bank</a></li>
-      <li><a href="#">Glide</a></li>
-    </ul>
+<form class="form-group" ng-hide="submit">
+  <div class="modal-body">
+
+    <div class="form-group">
+      <label>Choose Soup Kitchen</label>
+      <select class="form-control" ng-model="newDropOff.soupKitchen">
+        <option>San Francisco-Marin Food Bank</option>
+        <option>Project Homeless Connect</option>
+        <option>Edgewood</option>
+        <option>Alameda Food Bank</option>
+        <option>Glide</option>
+      </select>
+    </div>
+
+    <!-- //////FILTER POSSIBLE FOOD BANKS BY LOCATION////////////NOT JUST SF -->
+
+    <hr>
+    <p>* Some soup kitchens have special hours. Be sure to double check before making a drop off</p>
+
+    <div class="form-group">
+      <label class="col-2 col-form-label">Date: </label>
+      <div class="col-10">
+        <input class="form-control" type="date" ng-model="newDropOff.date">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-2 col-form-label">Time: </label>
+      <div class="col-10">
+        <input class="form-control" type="time" ng-model="newDropOff.time">
+      </div>
+    </div>
   </div>
+  <div class="modal-footer">
+    <button type="submit" ng-click="restaurantInfoCtrl.saveDropOff(newDropOff); submit=true" class="btn btn-primary">Schedule Drop Off</button>
+    <button type="button" class="btn btn-default" ng-click="restaurantInfoCtrl.close()">Cancel</button>
+  </div>
+</form>
 
-  <!-- //////FILTER POSSIBLE FOOD BANKS BY LOCATION////////////NOT JUST SF -->
-
-  <hr>
-  <p>* Some soup kitchens have special hours. Be sure to double check before making a drop off</p>
-
-  <form class="form-group">
-    <label>Date: </label>
-    <input type="text" class="form-control" placeholder="mm/dd">
-    <br><label>Time: </label>
-    <input type="text" class="form-control" placeholder="12:00 PM">
-</div>
-
-<div class="modal-body">
+<div ng-show="submit" class="modal-body">
   <h3>Confirmed!</h3><br>
-  <p>Soup Kitchen: {{soupKitchen}}</p>
-  <p>Date: {{date}}</p>
-  <p>Time: {{time}}</p>
+  <p>Soup Kitchen: {{restaurantInfoCtrl.newDropOff.soupKitchen}}</p>
+  <p>Date: {{restaurantInfoCtrl.newDropOff.date | date: "EEEE, MMMM d"}}</p>
+  <p>Time: {{restaurantInfoCtrl.newDropOff.time | date: "h:mm a"}}</p>
   <hr>
   <p>Thank you so much for your contribution! Your selected soup kitchen looks forward to your donation.</p>
 </div>
 
-<div class="modal-footer">
-  <button type="submit" class="btn btn-primary">Schedule</button>
-  <button type="button" class="btn btn-default" ng-click="restaurantInfoCtrl.close()">Cancel</button>
-  <button type="button" class="btn btn-primary"  data-dismiss="modal">Exit</button>
+<div ng-show="submit" class="modal-footer">
+  <button type="button" class="btn btn-default" ng-click="restaurantInfoCtrl.exit()">Exit</button>
 </div>
-
-
-<!-- MIGHT HAVE TO MOVE SUBMIT INTO MODAL FORM <FORM> -->
