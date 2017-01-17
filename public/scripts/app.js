@@ -11,7 +11,7 @@ function config($routeProvider, $locationProvider){
     })
     .when('/new-profile', {
       templateUrl: '/templates/new',
-      controller: 'NewController',
+      controller: 'QuestionController',
       controllerAs: 'newCtrl'
     })
     .when('/new-restaurant', {

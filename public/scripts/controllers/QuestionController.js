@@ -1,8 +1,8 @@
 angular.module('feedable')
-       .controller('NewController', NewController);
+       .controller('QuestionController', QuestionController);
 
-NewController.$inject = ['$location'];
-function NewController($location){
+QuestionController.$inject = ['$location'];
+function QuestionController($location){
   var vm = this;
   vm.newLocation = function(type){
     if (type === 'yes'){
