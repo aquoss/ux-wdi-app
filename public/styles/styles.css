@@ -53,7 +53,7 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
-#soup-kitchen, #restaurant {
+#soup-kitchen, #restaurant, #question {
   background: rgba(50, 50, 50, 0.7);
 }
 
@@ -87,7 +87,32 @@ body {
   font-weight: bold;
 }
 
+/*/////////////NEW QUESTION PATH////////////*/
+
+#question {
+  color: white;
+  height: 30vw;
+  margin-top: 150px;
+  text-align: center;
+}
+
+#question-text {
+  font-size: 36px;
+  margin-top: 150px;
+}
+
+.new-button {
+  color: black;
+  font-size: 18px;
+  margin: 20px 10px 0 10px;
+}
+
 /*/////////////RESTAURANT PATH//////////////*/
+
+.new {
+  text-align: center;
+  margin-top: 100px;
+}
 
 .logo2 {
   font-size: 4.5vw;
@@ -110,11 +135,6 @@ body {
 .restaurant-links {
   padding-top: 20px;
 }
-
-/*.modal {
-display: block;
-}*/
-
 
 button.back {
   float: left;
