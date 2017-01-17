@@ -2,7 +2,7 @@
   <span class="feed">feed</span><span class="able">ABLE</span>
 </div>
 
-<div class="row white-background">
+<div class="row main-container white-background">
 
   <h2 class="type-title col-xs-12">
     <button type="button" class="btn btn-secondary btn-sm back" ng-click="restaurantInfoCtrl.goBack()">
@@ -20,7 +20,7 @@
       <label>Phone Number: </label>
       <input type="text" class="form-control" placeholder="(   )   -    " ng-model="newRestaurant.phone"><br>
       <label>Contact Name: </label>
-      <input type="text" class="form-control" placeholder="Who should we ask to speak to if there's a problem?" ng-model="newRestaurant.contact"><br>
+      <input type="text" class="form-control" placeholder="Who should we ask to speak to?" ng-model="newRestaurant.contact"><br>
     </form>
   </div>
 
@@ -64,9 +64,11 @@
 
   <div class="col-xs-12 delivery">
     <h3>Delivery Method:</h3>
-    <button type="button" class="btn btn-secondary delivery-btn" ng-click="restaurantInfoCtrl.showPickUpModal()">Pick Up</button>
+    <button type="button" class="btn btn-secondary delivery-btn" ng-click="restaurantInfoCtrl.pickUpModal()">Pick Up</button>
 
-    <button type="button" class="btn btn-secondary delivery-btn" ng-click="restaurantInfoCtrl.showDropOffModal()">Drop Off</button>
+    <button type="button" class="btn btn-secondary delivery-btn" ng-click="restaurantInfoCtrl.dropOffModal()">Drop Off</button>
   </div>
+
+  text here: {{restaurantInfoCtrl.newPickUp.date}}
 
 </div>

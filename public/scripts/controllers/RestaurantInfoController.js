@@ -1,31 +1,41 @@
 angular.module('feedable')
        .controller('RestaurantInfoController', RestaurantInfoController);
 
-RestaurantInfoController.$inject = ['$location', 'ModalService'];
-function RestaurantInfoController($location, ModalService){
+RestaurantInfoController.$inject = ['$location', '$uibModal'];
+function RestaurantInfoController($location, $uibModal){
   var vm = this;
-  vm.saved = null;
+  vm.newPickUp = {};
+  vm.newDropOff = {};
+
   vm.goBack = function(){
     $location.path('/');
   }
-  vm.showPickUpModal = function(){
-    ModalService.showModal({
-      templateUrl: '/templates/pick-up',
-      controller: 'DeliveryController',
-      controllerAs: 'deliveryCtrl'
-    }).then(function(modal){
-      modal.element.modal();
-    })
+
+  vm.dropOffModal = function(){
+    modalInstance = $uibModal.open({
+      templateUrl: '/templates/drop-off',
+      controller: 'RestaurantInfoController',
+      controllerAs: 'restaurantInfoCtrl'
+    });
   }
 
-  vm.showDropOffModal = function(){
-    ModalService.showModal({
-      templateUrl: '/templates/drop-off',
-      controller: 'DeliveryController',
-      controllerAs: 'deliveryCtrl'
-    }).then(function(modal){
-      modal.element.modal();
-    })
+  vm.pickUpModal = function(){
+    modalInstance = $uibModal.open({
+      templateUrl: '/templates/pick-up',
+      controller: 'RestaurantInfoController',
+      controllerAs: 'restaurantInfoCtrl'
+    });
   }
+
+  // Close the modal
+  vm.close = function(){
+    modalInstance.close()
+  };
+
+  vm.savePickUp = function(request){
+    vm.newPickUp.push(request);
+    modalInstance.close();
+  }
+
 
 }

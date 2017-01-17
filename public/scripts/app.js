@@ -1,4 +1,4 @@
-angular.module('feedable', ['ngRoute', 'ngAnimate', 'angularModalService'])
+angular.module('feedable', ['ngRoute', 'ngAnimate', 'angularModalService', 'ui.bootstrap'])
        .config(config);
 
 config.$inject = ['$routeProvider', '$locationProvider'];
