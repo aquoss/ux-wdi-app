@@ -97,8 +97,8 @@ body {
 }
 
 #question-text {
-  font-size: 36px;
-  margin-top: 150px;
+  font-size: 3vw;
+  margin-top: 20%;
 }
 
 .new-button {
@@ -132,6 +132,11 @@ body {
   height: 75%;
 }
 
+.extend {
+  margin-top: 120px;
+  padding: 10px 50px 50px 50px;
+}
+
 .restaurant-links {
   padding-top: 20px;
 }
@@ -151,12 +156,23 @@ button.back {
   margin-left: 1vw;
 }
 
-.business-form, .delivery {
+.business-form {
   margin-left: 80px;
 }
 
 .grey-background {
   background: rgba(50,50,50,.3);
+}
+
+.save-btn {
+  font-size: 18px;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.delivery {
+  margin-top: 50px;
+  text-align: center;
 }
 
 .delivery-btn {
