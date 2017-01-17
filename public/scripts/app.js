@@ -9,11 +9,21 @@ function config($routeProvider, $locationProvider){
       controller: 'HomepageController',
       controllerAs: 'homepageCtrl'
     })
-    .when('/restaurant', {
+    .when('/new-profile', {
+      templateUrl: '/templates/new',
+      controller: 'NewController',
+      controllerAs: 'newCtrl'
+    })
+    .when('/new-restaurant', {
       templateUrl: '/templates/restaurant-info',
       controller: 'RestaurantInfoController',
       controllerAs: 'restaurantInfoCtrl'
     })
+    // .when('/restaurants', {
+    //   templateUrl: '/templates/select-restaurant',
+    //   controller: 'RestaurantSelectorController',
+    //   controllerAs: 'restSelectCtrl'
+    // })
     .when('/soup-kitchen', {
       templateUrl: '/templates/restaurant-list',
       controller: 'RestaurantListController',

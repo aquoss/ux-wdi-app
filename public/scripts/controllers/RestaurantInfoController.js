@@ -1,8 +1,8 @@
 angular.module('feedable')
        .controller('RestaurantInfoController', RestaurantInfoController);
 
-RestaurantInfoController.$inject = ['$location', '$uibModal'];
-function RestaurantInfoController($location, $uibModal){
+RestaurantInfoController.$inject = ['$location', '$uibModal','$http'];
+function RestaurantInfoController($location, $uibModal, $http){
   var vm = this;
   vm.newPickUp = {};
   vm.newDropOff = {};
@@ -33,7 +33,15 @@ function RestaurantInfoController($location, $uibModal){
   };
 
   vm.savePickUp = function(request){
-    vm.newPickUp.push(request);
+    $http({
+      method: 'POST',
+      url: '/api/pick-up/'+$routeParams.id,
+      data: request
+    }).then(function success(res){
+      vm.newPickUp = res.data;
+    }, function error(res){
+      console.log('error: ', res);
+    })
     modalInstance.close();
   }
 
