@@ -15,12 +15,15 @@
     <input type="text" class="form-control search" ng-model="searchText" placeholder="Search Restaurants">
     <div class="scroll">
       <div ng-repeat="rest in restaurantListCtrl.restaurants | orderBy: 'name' | filter: searchText">
-        <div class="col-md-3 col-sm-4 col-xs-6">
+        <div class="col-md-3 col-sm-4 col-xs-6" ng-click="more-info=true">
           <img class="rest-image" src="{{rest.image}}"></img>
           <div class="white-background text">
             <p class="rest-name"><b>{{rest.name}}</b></p>
             <p class="rest-address">{{rest.address}}</p>
           </div>
+        </div>
+        <div class="text" ng-show="more-info">
+
         </div>
       </div>
   </div>
