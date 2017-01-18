@@ -8,20 +8,16 @@ MEAN Stack
 - Node.js
 - MongoDB
 
-
-## Experience
-positives: wireframes and layout flow, choosing what aspects were most important to include on the prototype from a user
-perspective, initial design ideas
-so easy to work with and talk through choices and compromises
-balancing feasibility with user priorities (interesting to see what a developer vs ux designer brings to the table collaboration wise)
-- excited to work with designers and get more design choice elements (fonts, colors, etc)
-  - obviously couldn't do that this time around based on time restraints
-
-it was their first time working with a developer and I can't recommend them enough
-
 ## Contributors
-- link to wireframe
+UX Designers: [Yuri Kim](https://www.linkedin.com/in/yurik1m) and [Nili Pinchasin](https://www.linkedin.com/in/neeleebp?authType=NAME_SEARCH&authToken=1-8W&locale=en_US&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A121971366%2CauthType%3ANAME_SEARCH%2Cidx%3A1-1-1%2CtarId%3A1484683246761%2Ctas%3Anili)
+I collaborated with Nili and Yuri to develop the app idea and general wireframe design and layout flow (see the InVision prototype [here](https://projects.invisionapp.com/share/C5A0Q7JNQ#/screens/214277544)). It was fantastic to have input from a user perspective - it gave me great insight into project management and experience with how to balance feasibility against user priorities as a team.
 
 ## Deployment
+This app is deployed on Heroku - [View App](https://feedable.herokuapp.com)
 
-## Next Version
+## Future Versions
+- User login
+- Schedule repeating pick-ups/drop-offs
+- Connect with Lyft/Uber for pick-up
+- Incorporate Google Maps API
+- Soup Kitchen data model (rather than a hard coded list)
