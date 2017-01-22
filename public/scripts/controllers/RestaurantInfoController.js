@@ -4,9 +4,30 @@ angular.module('feedable')
 RestaurantInfoController.$inject = ['$location', '$uibModal','$http','$routeParams'];
 function RestaurantInfoController($location, $uibModal, $http, $routeParams){
   var vm = this;
+  vm.newRest = {};
   vm.newPickUp = {};
   vm.newDropOff = {};
   vm.success = null;
+
+  $http({
+    method: 'GET',
+    url: '/restaurants'
+  }).then(function success(res){
+    vm.restaurants = res.data;
+  })
+
+  vm.save = function(newRest){
+    console.log(newRest);
+    $http({
+      method: 'POST',
+      url: '/restaurants',
+      data: newRest
+    }).then(function success(res){
+      vm.restaurants.push(res.data);
+      console.log(vm.restaurants);
+    })
+    vm.success = true;
+  }
 
   vm.goBack = function(){
     $location.path('/');
@@ -38,21 +59,18 @@ function RestaurantInfoController($location, $uibModal, $http, $routeParams){
     $location.path('/');
   }
 
-  vm.saveRestaurant = function(){
-    vm.success = true;
-  }
-
   vm.savePickUp = function(request){
     vm.newPickUp = request;
-    // $http({
-    //   method: 'POST',
-    //   url: '/request/'+$routeParams.id,
-    //   data: request
-    // }).then(function success(res){
-    //   vm.newPickUp = res.data;
-    // }, function error(res){
-    //   console.log('error: ', res);
-    // })
+    $http({
+      method: 'POST',
+      url: '/request/'+$routeParams.id,
+      data: request
+    }).then(function success(res){
+      vm.newPickUp = res.data;
+      console.log(vm.newPickUp);
+    }, function error(res){
+      console.log('error: ', res);
+    })
   }
 
   vm.saveDropOff = function(request){

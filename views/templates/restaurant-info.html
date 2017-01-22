@@ -2,7 +2,7 @@
   <span class="feed">feed</span><span class="able">ABLE</span>
 </div>
 
-<div class="row white-background" ng-class="{'main-container':!delivery, 'extend':delivery}">
+<div class="row white-background main-container">
 
   <h2 class="type-title col-xs-12">
     <button type="button" class="btn btn-secondary btn-sm back" ng-click="restaurantInfoCtrl.goBack()">
@@ -10,17 +10,17 @@
     </button>
     Restaurant/Catering Service</h2><br>
 
-  <form>
+  <form ng-submit="restaurantInfoCtrl.save(newRestaurant)">
     <div class="col-xs-6">
       <div class="form-group business-form">
         <label>Business Name: </label>
-        <input type="text" class="form-control" ng-model="newRestaurant.name" required><br>
+        <input type="text" class="form-control" ng-model="newRestaurant.name" ng-required="true"><br>
         <label>Address: </label>
-        <input type="text" class="form-control" placeholder="Street Address, City State Zipcode" ng-model="newRestaurant.address" required><br>
+        <input type="text" class="form-control" placeholder="Street Address, City State Zipcode" ng-model="newRestaurant.address" ng-required="true"><br>
         <label>Phone Number: </label>
-        <input type="text" class="form-control" placeholder="(   )   -    " ng-model="newRestaurant.phone" required><br>
+        <input type="text" class="form-control" placeholder="(   )   -    " ng-model="newRestaurant.phone" ng-required="true"><br>
         <label>Contact Name: </label>
-        <input type="text" class="form-control" placeholder="Who should we ask to speak to?" ng-model="newRestaurant.contact" required><br>
+        <input type="text" class="form-control" placeholder="Who should we ask to speak to?" ng-model="newRestaurant.contact" ng-required="true"><br>
       </div>
     </div>
 
@@ -32,7 +32,7 @@
             <img class="link-image" src="http://webaddresshere.com/wp-content/uploads/2015/12/1409323491_web_design_website_monitor_imac_flat_icon_symbol-256.png">
           </div>
           <div class="col-xs-8">
-            <input type="text" class="form-control" placeholder="website url" ng-model="newRestaurant.website" required></span>
+            <input type="text" class="form-control" placeholder="website url" ng-model="newRestaurant.website" ng-required="true"></span>
           </div>
         </div>
         <div class="form-group info-link row">
@@ -40,7 +40,7 @@
             <img class="link-image" src="http://www.newdesignfile.com/postpic/2011/02/restaurant-menu-icons_237333.png">
           </div>
           <div class="col-xs-8">
-            <input type="text" class="form-control" placeholder="link to menu" ng-model="newRestaurant.menu" required></span>
+            <input type="text" class="form-control" placeholder="link to menu" ng-model="newRestaurant.menu" ng-required="true"></span>
           </div>
         </div>
         <div class="form-group info-link row">
@@ -64,21 +64,21 @@
             <img class="link-image" src="http://icons.iconarchive.com/icons/pelfusion/long-shadow-media/512/Camera-icon.png">
           </div>
           <div class="col-xs-8">
-            <input type="text" class="form-control" placeholder="link to business image" ng-model="newRestaurant.image" required></span>
+            <input type="text" class="form-control" placeholder="link to business image" ng-model="newRestaurant.image" ng-required="true"></span>
           </div>
         </div>
       </div>
     </div>
-    <button ng-hide="delivery" type="submit" class="btn btn-danger col-xs-4 col-xs-offset-4 save-btn" ng-click="restaurantInfoCtrl.save(); delivery=true">Save Profile</button>
+    <button type="submit" class="btn btn-danger col-xs-4 col-xs-offset-4 save-btn">Save Profile</button>
   </form>
 
   <!-- //////ONLY SHOW WHEN ALL REQUIRED INFO IS FILLED OUT//////////// -->
 
 
-  <div ng-show="delivery" class="col-xs-12 delivery">
+  <!-- <div ng-show="delivery" class="col-xs-12 delivery">
     <h3>Choose your method of delivery:</h3>
     <button type="button" class="btn btn-secondary delivery-btn" ng-click="restaurantInfoCtrl.pickUpModal()">Pick Up</button>
     <button type="button" class="btn btn-secondary delivery-btn" ng-click="restaurantInfoCtrl.dropOffModal()">Drop Off</button>
-  </div>
+  </div> -->
 
 </div>

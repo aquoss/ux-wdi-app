@@ -7,6 +7,7 @@ var app = express();
 
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
 
 app.get('/', function (req,res){
   res.sendFile('views/index.html', {root:__dirname});
@@ -25,13 +26,17 @@ app.get('/restaurants', function(req, res){
       res.status(500).send('server error');
       return console.log('index error:' + err);
     }
-    res.json(restaurants)
+    res.json(restaurants);
   });
 });
 
-// app.post('/request', function(req, res){
-//   db.
-// })
+app.post('/restaurants', function(req,res){
+  var newRest = new db.Restaurant(req.body);
+  newRest.save(function(err,rest){
+    if (err) {console.log('error',err); }
+    res.json(rest);
+  })
+})
 
 
 app.listen(process.env.PORT || 3000, function(){
