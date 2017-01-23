@@ -1,0 +1,20 @@
+<div class="logo2 col-xs-12">
+  <span class="feed">feed</span><span class="able">ABLE</span>
+</div>
+
+<div class="row white-background main-container">
+
+  <h2 class="type-title col-xs-12">
+    <button type="button" class="btn btn-secondary btn-sm back" ng-click="restaurantInfoCtrl.goBack()">
+      <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Start Over
+    </button>
+    Restaurant/Catering Service</h2><br>
+
+
+  <div ng-show="delivery" class="col-xs-12 delivery">
+    <h3>Choose your method of delivery:</h3>
+    <button type="button" class="btn btn-secondary delivery-btn" ng-click="restaurantInfoCtrl.pickUpModal()">Pick Up</button>
+    <button type="button" class="btn btn-secondary delivery-btn" ng-click="restaurantInfoCtrl.dropOffModal()">Drop Off</button>
+  </div>
+
+</div>

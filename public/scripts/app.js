@@ -19,6 +19,11 @@ function config($routeProvider, $locationProvider){
       controller: 'RestaurantInfoController',
       controllerAs: 'restaurantInfoCtrl'
     })
+    .when('/restaurants/:id/delivery', {
+      templateUrl: '/templates/delivery',
+      controller: 'DeliveryController',
+      controllerAs: 'deliveryCtrl'
+    })
     // .when('/restaurants', {
     //   templateUrl: '/templates/select-restaurant',
     //   controller: 'RestaurantSelectorController',
