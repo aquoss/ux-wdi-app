@@ -39,7 +39,6 @@ restaurantList.push({
             });
 
 
-
 db.Restaurant.remove({}, function(err, restaurants){
 
   db.Restaurant.create(restaurantList, function(err, restaurants){

@@ -181,6 +181,11 @@ button.back {
   margin-right: 2vw;
 }
 
+#map {
+  height: 20vw;
+  width: 30vw;
+}
+
 /*/////////////////////SOUP KITCHEN PATH//////////////////*/
 
 .rest-image {

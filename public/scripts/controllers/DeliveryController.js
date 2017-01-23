@@ -18,16 +18,16 @@ function DeliveryController($location, $uibModal, $http, $routeParams){
   vm.dropOffModal = function(){
     modalInstance = $uibModal.open({
       templateUrl: '/templates/drop-off',
-      controller: 'RestaurantInfoController',
-      controllerAs: 'restaurantInfoCtrl'
+      controller: 'DeliveryController',
+      controllerAs: 'deliveryCtrl'
     });
   }
 
   vm.pickUpModal = function(){
     modalInstance = $uibModal.open({
       templateUrl: '/templates/pick-up',
-      controller: 'RestaurantInfoController',
-      controllerAs: 'restaurantInfoCtrl'
+      controller: 'DeliveryController',
+      controllerAs: 'deliveryCtrl'
     });
   }
 
@@ -62,4 +62,14 @@ function DeliveryController($location, $uibModal, $http, $routeParams){
   vm.goBack = function(){
     $location.path('/');
   }
+
+  vm.map = function newMap() {
+    // Create a map object and specify the DOM element for display.
+    var map = new google.maps.Map(document.getElementById('map'), {
+      center: {lat: 37.78, lng: -122.44},
+      // scrollwheel: false,
+      zoom: 12
+    });
+  }
+
 }

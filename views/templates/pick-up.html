@@ -1,5 +1,5 @@
 <div class="modal-header">
-  <button type="button" class="close" ng-hide="submit" ng-click="restaurantInfoCtrl.close()" aria-hidden="true">&times;</button>
+  <button type="button" class="close" ng-hide="submit" ng-click="deliveryCtrl.close()" aria-hidden="true">&times;</button>
   <h2 class="modal-title">Pick-Up</h4>
 </div>
 <form class="form-group" ng-hide="submit">
@@ -20,19 +20,19 @@
      </div>
     </div>
   <div class="modal-footer">
-    <button type="submit" ng-click="restaurantInfoCtrl.savePickUp(newPickUp); submit=true" class="btn btn-primary">Request Pick Up</button>
-    <button type="button" class="btn btn-default" ng-click="restaurantInfoCtrl.close()">Cancel</button>
+    <button type="submit" ng-click="deliveryCtrl.savePickUp(newPickUp); submit=true" class="btn btn-primary">Request Pick Up</button>
+    <button type="button" class="btn btn-default" ng-click="deliveryCtrl.close()">Cancel</button>
   </div>
 </form>
 
 <div class="modal-body" ng-show="submit">
   <h3>Scheduled!</h3><br>
-  <p>Requested Date: {{restaurantInfoCtrl.newPickUp.date | date: "EEEE, MMMM d"}}</p>
-  <p>Requested Time: {{restaurantInfoCtrl.newPickUp.time | date: "h:mm a"}}</p>
+  <p>Requested Date: {{deliveryCtrl.newPickUp.date | date: "EEEE, MMMM d"}}</p>
+  <p>Requested Time: {{deliveryCtrl.newPickUp.time | date: "h:mm a"}}</p>
   <hr>
   <p>A request has been sent to the soup kitchens in your area. The one that can most closely accomodate your timing will reach out to your provided contact.</p>
 </div>
 
 <div ng-show="submit" class="modal-footer">
-  <button type="button" class="btn btn-default" ng-click="restaurantInfoCtrl.exit()">Exit</button>
+  <button type="button" class="btn btn-default" ng-click="deliveryCtrl.exit()">Exit</button>
 </div>
