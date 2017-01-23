@@ -76,14 +76,17 @@ function DeliveryController($location, $uibModal, $http, $routeParams){
     var map = new google.maps.Map(document.getElementById('map'), {
       center: {lat: 37.78, lng: -122.44},
       // scrollwheel: false,
-      zoom: 12
+      zoom: 10
     });
 
-    // var marker = new google.maps.Marker({
-    //   position: myLatLng,
-    //   map: map,
-    //   title: 'Hello World!'
-    // });
+    vm.soupKitchens.forEach(function(kitchen){
+      var marker = new google.maps.Marker({
+        position: kitchen.location,
+        animation: google.maps.Animation.DROP,
+        map: map
+      })
+      marker.setMap(map);
+    })
   }
 
 }
