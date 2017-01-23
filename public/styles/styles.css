@@ -132,11 +132,6 @@ body {
   height: 75%;
 }
 
-/*.extend {
-  margin-top: 120px;
-  padding: 10px 50px 50px 50px;
-}*/
-
 .restaurant-links {
   padding-top: 20px;
 }
@@ -182,8 +177,16 @@ button.back {
 }
 
 #map {
-  height: 30vw;
-  width: 60vw;
+  height: 400px;
+}
+
+.kitchen-list-scroll {
+  overflow-y: auto;
+  height: 400px;
+}
+
+.kitchen-select:hover {
+  background: rgba(50, 50, 50, 0.2);
 }
 
 /*/////////////////////SOUP KITCHEN PATH//////////////////*/
