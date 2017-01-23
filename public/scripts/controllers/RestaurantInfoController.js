@@ -17,7 +17,6 @@ function RestaurantInfoController($location, $http){
   })
 
   vm.save = function(newRest){
-    console.log(newRest);
     $http({
       method: 'POST',
       url: '/restaurants',
