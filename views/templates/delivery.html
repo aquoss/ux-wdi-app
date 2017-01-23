@@ -11,15 +11,24 @@
     {{deliveryCtrl.restaurant.name}}</h2><br>
 
 
-  <div class="col-xs-12 delivery">
+  <div class="col-xs-12 delivery" ng-hide="map">
     <h3>Choose your method of delivery:</h3>
     <button type="button" class="btn btn-secondary delivery-btn" ng-click="deliveryCtrl.pickUpModal()">Pick Up</button>
-    <button type="button" class="btn btn-secondary delivery-btn" ng-click="deliveryCtrl.map()">Drop Off</button>
+    <button type="button" class="btn btn-secondary delivery-btn" ng-click="deliveryCtrl.map(); map=true">Drop Off</button>
   </div>
 
-  <div class="col-xs-12" id="map">
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHLett8djBo62dDXj0EjCimF8Rd6E8cxg"></script>
+  <div class="col-xs-12">
+    <div class="col-xs-8" id="map" ng-show="map">
+      <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHLett8djBo62dDXj0EjCimF8Rd6E8cxg"></script>
+    </div>
+    <div class="col-xs-3 col-xs-offset-1 kitchen-list-scroll" ng-show="map">
+      <div ng-repeat="kitchen in deliveryCtrl.soupKitchens" class="kitchen-select">
+        <h4>{{kitchen.name}}</h4>
+        <p>{{kitchen.address}}<br>{{kitchen.phone}}<br>{{kitchen.hours}}</p>
+      </div>
+    </div>
   </div>
+
 
 </div>
 

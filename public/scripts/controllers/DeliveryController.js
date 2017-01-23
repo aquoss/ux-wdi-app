@@ -24,6 +24,7 @@ function DeliveryController($location, $uibModal, $http, $routeParams){
   });
 
   vm.dropOffModal = function(){
+    console.log('hi')
     modalInstance = $uibModal.open({
       templateUrl: '/templates/drop-off',
       controller: 'DeliveryController',
@@ -75,7 +76,6 @@ function DeliveryController($location, $uibModal, $http, $routeParams){
     // Create a map object and specify the DOM element for display.
     var map = new google.maps.Map(document.getElementById('map'), {
       center: {lat: 37.78, lng: -122.44},
-      // scrollwheel: false,
       zoom: 10
     });
 
@@ -85,7 +85,16 @@ function DeliveryController($location, $uibModal, $http, $routeParams){
         animation: google.maps.Animation.DROP,
         map: map
       })
+
+      var contentString = '<h4>'+kitchen.name+'</h4>';
+      var infowindow = new google.maps.InfoWindow({
+        content: contentString
+      });
+
       marker.setMap(map);
+      marker.addListener('click', function() {
+        infowindow.open(map, marker);
+      });
     })
   }
 
