@@ -5,6 +5,7 @@ var SoupKitchenSchema = new Schema({
   name: String,
   address: String,
   phone: String,
+  hours: String,
   location: {
         lat: {
           type: Number,
@@ -17,6 +18,6 @@ var SoupKitchenSchema = new Schema({
       }
 });
 
-var soupKitchen = mongoose.model('SoupKitchen', SoupKitchenSchema);
+var SoupKitchen = mongoose.model('SoupKitchen', SoupKitchenSchema);
 
 module.exports = SoupKitchen;
