@@ -44,6 +44,16 @@ app.get('/restaurants/:id', function(req, res){
   });
 });
 
+app.get('/soup-kitchens', function(req, res){
+  db.SoupKitchen.find({}, function(err, kitchens){
+    if(err){
+      res.status(500).send('server error');
+      return console.log('index error:' + err);
+    }
+    res.json(kitchens);
+  });
+});
+
 
 app.listen(process.env.PORT || 3000, function(){
   console.log('Example app listening at http://localhost:3000/');

@@ -5,6 +5,7 @@ DeliveryController.$inject = ['$location', '$uibModal','$http','$routeParams'];
 function DeliveryController($location, $uibModal, $http, $routeParams){
   var vm = this;
   vm.restaurant = {};
+  vm.soupKitchens = {};
   vm.newPickUp = {};
   vm.newDropOff = {};
 
@@ -13,6 +14,13 @@ function DeliveryController($location, $uibModal, $http, $routeParams){
     url: '/restaurants/'+$routeParams.id
   }).then(function success(res){
     vm.restaurant = res.data;
+  });
+
+  $http({
+    method: 'GET',
+    url: '/soup-kitchens'
+  }).then(function success(res){
+    vm.soupKitchens = res.data;
   });
 
   vm.dropOffModal = function(){
@@ -70,6 +78,12 @@ function DeliveryController($location, $uibModal, $http, $routeParams){
       // scrollwheel: false,
       zoom: 12
     });
+
+    // var marker = new google.maps.Marker({
+    //   position: myLatLng,
+    //   map: map,
+    //   title: 'Hello World!'
+    // });
   }
 
 }
