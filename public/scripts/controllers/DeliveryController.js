@@ -4,8 +4,16 @@ angular.module('feedable')
 DeliveryController.$inject = ['$location', '$uibModal','$http','$routeParams'];
 function DeliveryController($location, $uibModal, $http, $routeParams){
   var vm = this;
+  vm.restaurant = {};
   vm.newPickUp = {};
   vm.newDropOff = {};
+
+  $http({
+    method: 'GET',
+    url: '/restaurants/'+$routeParams.id
+  }).then(function success(res){
+    vm.restaurant = res.data;
+  });
 
   vm.dropOffModal = function(){
     modalInstance = $uibModal.open({

@@ -5,16 +5,16 @@
 <div class="row white-background main-container">
 
   <h2 class="type-title col-xs-12">
-    <button type="button" class="btn btn-secondary btn-sm back" ng-click="restaurantInfoCtrl.goBack()">
+    <button type="button" class="btn btn-secondary btn-sm back" ng-click="deliveryCtrl.goBack()">
       <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Start Over
     </button>
-    Restaurant/Catering Service</h2><br>
+    {{deliveryCtrl.restaurant.name}}</h2><br>
 
 
-  <div ng-show="delivery" class="col-xs-12 delivery">
+  <div class="col-xs-12 delivery">
     <h3>Choose your method of delivery:</h3>
-    <button type="button" class="btn btn-secondary delivery-btn" ng-click="restaurantInfoCtrl.pickUpModal()">Pick Up</button>
-    <button type="button" class="btn btn-secondary delivery-btn" ng-click="restaurantInfoCtrl.dropOffModal()">Drop Off</button>
+    <button type="button" class="btn btn-secondary delivery-btn" ng-click="deliveryCtrl.pickUpModal()">Pick Up</button>
+    <button type="button" class="btn btn-secondary delivery-btn" ng-click="deliveryCtrl.dropOffModal()">Drop Off</button>
   </div>
 
 </div>

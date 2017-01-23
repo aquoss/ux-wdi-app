@@ -38,6 +38,12 @@ app.post('/restaurants', function(req,res){
   })
 })
 
+app.get('/restaurants/:id', function(req, res){
+  db.Restaurant.findOne({_id: req.params.id}, function(err, data){
+    res.json(data);
+  });
+});
+
 
 app.listen(process.env.PORT || 3000, function(){
   console.log('Example app listening at http://localhost:3000/');
