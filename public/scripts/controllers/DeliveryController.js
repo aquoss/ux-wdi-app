@@ -72,30 +72,50 @@ function DeliveryController($location, $uibModal, $http, $routeParams){
     $location.path('/');
   }
 
+  var map;
+  var allMarkers;
   vm.map = function newMap() {
     // Create a map object and specify the DOM element for display.
-    var map = new google.maps.Map(document.getElementById('map'), {
+    map = new google.maps.Map(document.getElementById('map'), {
       center: {lat: 37.78, lng: -122.44},
-      zoom: 10
+      zoom: 9
     });
 
-    vm.soupKitchens.forEach(function(kitchen){
-      var marker = new google.maps.Marker({
-        position: kitchen.location,
-        animation: google.maps.Animation.DROP,
-        map: map
-      })
+    // vm.makeMarker = vm.soupKitchens.forEach(function(kitchen){
+    //
+    //   var marker = new google.maps.Marker({
+    //     position: kitchen.location,
+    //     // animation: google.maps.Animation.DROP,
+    //     icon: '../../images/kitchen.svg',
+    //     map: map
+    //   })
+    //
+    //   marker.setMap(map);
+    //   allMarkers.push(marker);
+    // })
 
-      var contentString = '<h4>'+kitchen.name+'</h4>';
-      var infowindow = new google.maps.InfoWindow({
-        content: contentString
-      });
+    // var contentString = '<h4>'+kitchen.name+'</h4>';
+    // var infowindow = new google.maps.InfoWindow({
+    //   content: contentString
+    // });
+    //
+    // marker.setMap(map);
+    // marker.addListener('click', function() {
+    //   infowindow.open(map, marker);
+    // });
+  }
 
-      marker.setMap(map);
-      marker.addListener('click', function() {
-        infowindow.open(map, marker);
-      });
+  vm.dropPin = function(location){
+    singleMarker = new google.maps.Marker({
+      icon: '../../images/kitchen.svg',
+      position: location,
+      animation: google.maps.Animation.DROP,
+      map: map
     })
+  }
+
+  vm.removePin = function(){
+    vm.dropPin(null);
   }
 
 }

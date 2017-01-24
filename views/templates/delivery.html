@@ -23,8 +23,10 @@
     </div>
     <div class="col-xs-3 col-xs-offset-1 kitchen-list-scroll" ng-show="map">
       <div ng-repeat="kitchen in deliveryCtrl.soupKitchens" class="kitchen-select">
-        <h4>{{kitchen.name}}</h4>
-        <p>{{kitchen.address}}<br>{{kitchen.phone}}<br>{{kitchen.hours}}</p>
+        <div ng-mouseenter="deliveryCtrl.dropPin(kitchen.location)" ng-mouseleave="deliveryCtrl.removePin()">
+          <h4>{{kitchen.name}}</h4>
+          <p>{{kitchen.address}}<br>{{kitchen.phone}}<br>{{kitchen.hours}}</p>
+        </div>
       </div>
     </div>
   </div>
