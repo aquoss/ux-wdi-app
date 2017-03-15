@@ -19,5 +19,4 @@ This app is deployed on Heroku - [View App](https://feedable.herokuapp.com)
 - User login
 - Schedule repeating pick-ups/drop-offs
 - Connect with Lyft/Uber for pick-up
-- Incorporate Google Maps API
 - Soup Kitchen data model (rather than a hard coded list)
